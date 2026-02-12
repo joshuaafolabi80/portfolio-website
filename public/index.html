@@ -7,11 +7,22 @@
     <meta name="theme-color" content="#2c3e50" />
     <meta name="description" content="Professional Portfolio Website" />
     <title>Gbenga J. Afolabi | Portfolio</title>
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   </head>
   <body>
     <noscript>Enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>

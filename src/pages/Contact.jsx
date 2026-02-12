@@ -23,13 +23,21 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
+    // This helper function formats the data for Netlify's bot
+    const encode = (data) => {
+      return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+    };
+
     try {
-      // This will be handled by Netlify Forms automatically
-      // The form has data-netlify="true" attribute
-      // Netlify will process the form submission automatically
-      
-      console.log('Form data submitted to Netlify:', formData);
-      
+      // We "fetch" to the root, but Netlify intercepts this as a form submission
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...formData })
+      });
+
       // Show success message
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
@@ -64,7 +72,7 @@ const Contact = () => {
       icon: "fas fa-map-marker-alt",
       title: "Location",
       value: "Asaba, Delta State, Nigeria",
-      link: "https://maps.google.com/?q=Asaba+Delta+State+Nigeria"
+      link: "https://maps.google.com"
     }
   ];
 
@@ -196,9 +204,8 @@ const Contact = () => {
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 onSubmit={handleSubmit}
-                netlify
               >
-                {/* Netlify hidden fields */}
+                {/* Netlify hidden fields for identification */}
                 <input type="hidden" name="form-name" value="contact" />
                 <input type="hidden" name="bot-field" />
                 
@@ -254,7 +261,7 @@ const Contact = () => {
                     rows="6"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Tell me about your project, timeline, and budget..."
+                    placeholder="Tell me about your project..."
                     required
                   ></textarea>
                 </div>
@@ -278,32 +285,7 @@ const Contact = () => {
                     )}
                   </button>
                 </div>
-
-                <p className="text-muted text-center mt-4 small">
-                  * Required fields. I typically respond within 24 hours on weekdays.
-                </p>
               </form>
-            </div>
-          </div>
-
-          {/* Response Time Note */}
-          <div className="mt-5 text-center">
-            <div className="alert alert-info border-0 shadow-sm">
-              <h5 className="alert-heading">
-                <i className="fas fa-clock me-2"></i>
-                How Netlify Forms Works
-              </h5>
-              <p className="mb-0">
-                This form is powered by Netlify Forms. After submission, 
-                I'll receive your message directly in my email. All form 
-                submissions are secure and stored in Netlify's dashboard.
-              </p>
-              <hr />
-              <p className="mb-0 small">
-                <i className="fas fa-lightbulb me-2"></i>
-                <strong>Pro Tip:</strong> For fastest response, include your 
-                WhatsApp number or preferred contact method in your message.
-              </p>
             </div>
           </div>
         </div>
