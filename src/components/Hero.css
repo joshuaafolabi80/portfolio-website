@@ -1,0 +1,74 @@
+/* Hero.css */
+.hero-content {
+  text-align: center;
+}
+
+.hero-title {
+  text-align: center !important;
+  color: var(--dark-text) !important;
+}
+
+.accent-name {
+  color: var(--accent-orange) !important;
+}
+
+.hero-subtitle {
+  text-align: center !important;
+  color: var(--secondary-blue) !important;
+}
+
+.hero-description {
+  text-align: justify !important;
+}
+
+.hero-paragraph {
+  text-align: justify !important;
+  text-justify: inter-word !important;
+  margin-bottom: 1rem !important;
+  line-height: 1.6 !important;
+}
+
+.hero-buttons .btn {
+  margin-bottom: 0.5rem !important;
+}
+
+.portrait-container {
+  width: 350px !important;
+  height: 350px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  border: 8px solid white !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+  margin: 0 auto !important;
+  background: linear-gradient(45deg, var(--secondary-blue), var(--accent-purple)) !important;
+  position: relative !important;
+}
+
+.portrait-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Responsive styles */
+@media (min-width: 992px) {
+  .hero-content {
+    text-align: left !important;
+  }
+  
+  .hero-title,
+  .hero-subtitle {
+    text-align: left !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .portrait-container {
+    width: 280px !important;
+    height: 280px !important;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem !important;
+  }
+}

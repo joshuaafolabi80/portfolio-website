@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "messages"
+    label: "Contact Form Messages"
+    folder: "_data/messages"
+    create: true
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Email", name: "email", widget: "string"}
+      - {label: "Subject", name: "subject", widget: "string"}
+      - {label: "Message", name: "message", widget: "text"}
