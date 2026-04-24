@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import CV from './pages/CV';
 import Works from './pages/Works';
 import Contact from './pages/Contact';
+import AgenticAI from './pages/AgenticAI'; // ADD THIS
+import AgenticAIDetailPage from './pages/AgenticAIDetailPage'; // ADD THIS
 import './App.css';
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/cv" element={<CV />} />
             <Route path="/works" element={<Works />} />
+            <Route path="/agentic-ai" element={<AgenticAI />} /> {/* ADD THIS */}
+            <Route path="/agentic-ai/:id" element={<AgenticAIDetailPage />} /> {/* ADD THIS */}
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

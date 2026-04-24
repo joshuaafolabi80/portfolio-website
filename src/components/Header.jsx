@@ -8,6 +8,7 @@ const Header = () => {
     { path: '/', label: 'Home' },
     { path: '/cv', label: 'My CV' },
     { path: '/works', label: 'My Works' },
+    { path: '/agentic-ai', label: 'My Agentic AI Builds' }, // NEW TAB
     { path: '/contact', label: 'Contact' }
   ];
 
