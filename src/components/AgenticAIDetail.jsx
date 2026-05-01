@@ -11,7 +11,7 @@ const AgenticAIDetail = () => {
       title: "Intelligent Lead Management Automation",
       fullDescription: `
         An enterprise-grade, agentic automation pipeline designed to eliminate manual lead qualification. 
-        The system autonomously ingests, categorizes, and enriches incoming leads in real-time, drastically reducing the time between a prospect’s initial contact and the sales team's outreach.
+        The system autonomously ingests, categorizes, and enriches incoming leads in real-time, drastically reducing the time between a prospect's initial contact and the sales team's outreach.
         
         Key features include:
         • Real-time Lead Routing: Intelligent categorization into "Corporate" vs "Personal" leads.
@@ -25,7 +25,7 @@ const AgenticAIDetail = () => {
       `,
       technologies: ["Make.com (Integromat)", "Google Sheets API", "Clearbit API", "Google Apps Script", "Gmail API", "JSON Data Handling"],
       githubLink: "https://github.com/joshuaafolabi80/lead-management-automation",
-      liveLink: "#", // Add your video walkthrough link here
+      videoUrl: "https://drive.google.com/file/d/1tX_Pm2Hebu0mdu0a50ZVnT7vxGzBbdWB/preview",
       images: [
         "https://res.cloudinary.com/dnc3s4u7q/image/upload/v1777039619/FULL_SCENARIO_kdrdxm.png",
         "https://res.cloudinary.com/dnc3s4u7q/image/upload/v1777039644/SCORING_LOGIC_usvuj0.png",
@@ -98,6 +98,28 @@ const AgenticAIDetail = () => {
             </div>
           </div>
 
+          {/* Video Walkthrough Section - Embedded */}
+          <div className="card shadow-sm mb-4 border-0">
+            <div className="card-body p-4">
+              <h3 className="mb-3" style={{ color: 'var(--accent-orange)' }}>
+                <i className="fas fa-play-circle me-2"></i>
+                Demo Walkthrough
+              </h3>
+              <div className="ratio ratio-16x9">
+                <iframe 
+                  src={project.videoUrl}
+                  title="Lead Management Automation Demo Walkthrough"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  frameBorder="0"
+                ></iframe>
+              </div>
+              <p className="text-muted mt-2 small">
+                Watch how the autonomous SDR pipeline ingests, enriches, scores, and routes leads in real-time.
+              </p>
+            </div>
+          </div>
+
           {/* Full Description */}
           <div className="card shadow-sm mb-4 border-0">
             <div className="card-body p-4">
@@ -166,11 +188,23 @@ const AgenticAIDetail = () => {
 
           {/* Links */}
           <div className="d-flex gap-3 mb-5 justify-content-center">
-            <a href={project.githubLink} className="btn btn-dark btn-lg" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-github me-2"></i> View System Logic
+            <a 
+              href={project.githubLink} 
+              className="btn btn-dark btn-lg" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-github me-2"></i> 
+              View System Logic
             </a>
-            <a href={project.liveLink} className="btn btn-custom btn-lg" target="_blank" rel="noopener noreferrer">
-              <i className="fas fa-play-circle me-2"></i> Watch Demo Walkthrough
+            <a 
+              href={project.videoUrl.replace('/preview', '/view?usp=sharing')} 
+              className="btn btn-custom btn-lg" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <i className="fas fa-external-link-alt me-2"></i> 
+              Open Video in New Tab
             </a>
           </div>
         </div>

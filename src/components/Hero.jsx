@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Hero.css'; 
 
 const Hero = () => {
@@ -11,7 +12,7 @@ const Hero = () => {
               Hi, I'm <span className="accent-name">Gbenga Joshua Afolabi</span>
             </h1>
             <h2 className="hero-subtitle h3 mb-4">
-              Software Engineer | App & Game Developer
+              Software Engineer | App & Game Developer | Agentic AI Builder
             </h2>
             
             <div className="hero-description mb-4">
@@ -28,23 +29,21 @@ const Hero = () => {
               </p>
               
               <p className="hero-paragraph">
-                My passion for technology is matched only by my dedication to continuous learning and innovative problem-solving. Let's build something exceptional together.
+                My passion for technology is matched only by my dedication to continuous learning and innovative problem-solving. I also build <strong>Agentic AI automation systems</strong> that transform manual business processes into autonomous, data-driven workflows. Let's build something exceptional together.
               </p>
             </div>
             
             <div className="hero-buttons d-flex flex-wrap gap-3 mb-4">
-              <a 
-                href="/contact" 
-                className="btn btn-custom btn-lg"
-              >
+              <Link to="/contact" className="btn btn-custom btn-lg">
                 Get In Touch
-              </a>
-              <a 
-                href="/works" 
-                className="btn btn-outline-primary btn-lg"
-              >
+              </Link>
+              <Link to="/works" className="btn btn-outline-primary btn-lg">
                 View My Work
-              </a>
+              </Link>
+              <Link to="/agentic-ai" className="btn btn-outline-secondary btn-lg">
+                <i className="fas fa-robot me-2"></i>
+                My Agentic AI Builds
+              </Link>
             </div>
           </div>
           

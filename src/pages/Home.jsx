@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 
 const Home = () => {
@@ -80,14 +81,45 @@ const Home = () => {
                 
                 <div className="col-md-3 mb-4">
                   <div className="p-4 rounded shadow-sm bg-white h-100">
-                    <i className="fas fa-brain fa-2x mb-3" style={{ color: 'var(--secondary-blue)' }}></i>
-                    <h5>Data Science</h5>
+                    <i className="fas fa-robot fa-2x mb-3" style={{ color: 'var(--secondary-blue)' }}></i>
+                    <h5>Agentic AI & Automation</h5>
                     <p className="small text-muted mb-0">
-                      Data analysis & machine learning solutions
+                      Autonomous workflows, API integrations, intelligent systems
                     </p>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Agentic AI Showcase Teaser */}
+      <section className="py-5" style={{ backgroundColor: 'white' }}>
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-6 mb-4 mb-lg-0">
+              <img 
+                src="https://res.cloudinary.com/dnc3s4u7q/image/upload/v1777039619/FULL_SCENARIO_kdrdxm.png" 
+                alt="Agentic AI Automation Workflow"
+                className="img-fluid rounded shadow-sm"
+                style={{ width: '100%', maxHeight: '400px', objectFit: 'cover' }}
+              />
+            </div>
+            <div className="col-lg-6">
+              <h3 className="mb-3" style={{ color: 'var(--accent-orange)' }}>
+                <i className="fas fa-robot me-2"></i>
+                Agentic AI & Automation
+              </h3>
+              <h4 style={{ color: 'var(--primary-blue)' }}>Intelligent Lead Management Automation</h4>
+              <p className="mb-4">
+                I build autonomous systems that transform manual business processes into intelligent, 
+                data-driven workflows. My Agentic AI pipeline ingests, enriches, scores, and routes leads 
+                in real-time using Make.com, Clearbit API, and Google Apps Script.
+              </p>
+              <Link to="/agentic-ai" className="btn btn-custom">
+                Explore My Agentic AI Builds →
+              </Link>
             </div>
           </div>
         </div>
@@ -103,21 +135,19 @@ const Home = () => {
               </h3>
               <p className="mb-4">
                 Let's collaborate on your next project. I'm passionate about turning ideas into 
-                reality with clean code and innovative solutions.
+                reality with clean code, innovative solutions, and intelligent automation.
               </p>
               <div className="d-flex flex-column flex-md-row justify-content-center gap-3">
-                <a 
-                  href="/works" 
-                  className="btn btn-custom btn-lg"
-                >
+                <Link to="/works" className="btn btn-custom btn-lg">
                   View My Work
-                </a>
-                <a 
-                  href="/contact" 
-                  className="btn btn-outline-primary btn-lg"
-                >
+                </Link>
+                <Link to="/agentic-ai" className="btn btn-outline-secondary btn-lg">
+                  <i className="fas fa-robot me-2"></i>
+                  My Agentic AI Builds
+                </Link>
+                <Link to="/contact" className="btn btn-outline-primary btn-lg">
                   Contact Me
-                </a>
+                </Link>
               </div>
             </div>
           </div>
